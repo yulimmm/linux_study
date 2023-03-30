@@ -9,7 +9,7 @@ int main() {
 	int shmid;
 	void *address;
 
-    int shmLiveboxid;
+    uint8_t shmLiveboxid;
     uint8_t *shmLiveboxaddr;
 /*
 	if( (shmid = shmget(KEY_NUM,MEM_SIZE,IPC_CREAT | 0666)) != (-1) ) {
