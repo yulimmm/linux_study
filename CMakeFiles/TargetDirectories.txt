@@ -1,0 +1,3 @@
+/home/spu02/test/CMakeFiles/rebuild_cache.dir
+/home/spu02/test/CMakeFiles/a.out.dir
+/home/spu02/test/CMakeFiles/edit_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/a.out.dir/a.c.o CMakeFiles/a.out.dir/b.c.o  -o a.out 
