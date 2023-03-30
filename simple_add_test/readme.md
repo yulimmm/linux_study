@@ -14,12 +14,12 @@ make
 ```
 
 ------------
-# C compile
+### C compile
 ```
 gcc -o a.out a.c a.h b.c 
 ```
 
-# C++ compile
+### C++ compile
 ```
 g++ -o a.out a.cpp a.h b.cpp 
 ```
