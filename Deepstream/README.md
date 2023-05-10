@@ -1,7 +1,7 @@
 ### Information
 + input: RTSP
 + ouput: RTSP
-+ Edit source1_csi_dec_infer_resent_int8.txt and source8_1080p_dec_infer-resnet_tracker_tiled_display_fp16_nano.txt 
++ Edit *source1_csi_dec_infer_resent_int8.txt* and *source8_1080p_dec_infer-resnet_tracker_tiled_display_fp16_nano.txt* 
 
 ### File location
 ``` 
