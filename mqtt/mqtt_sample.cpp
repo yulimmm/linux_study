@@ -21,13 +21,14 @@ const char* LWT_PAYLOAD = "Last will and testament.";
 
 const int  TEST_QOS = 1;
 
-const auto TEST_TIMEOUT = std::chrono::seconds(10);
+const auto TEST_TIMEOUT = std::chrono::seconds(10); 
 
 /////////////////////////////////////////////////////////////////////////////
 
 /**
  * A callback class for use with the main MQTT client.
  */
+
 class test_callback : public virtual mqtt::callback
 {
 public:
@@ -102,21 +103,22 @@ int main(int argc, char* argv[])
 	test_callback cb;
 	client.set_callback(cb);
 
-	auto connOpts = mqtt::connect_options_builder()
-		.clean_session()
-		.will(mqtt::message(TOPIC, LWT_PAYLOAD, TEST_QOS))
-		.finalize();
+	auto connOpts = mqtt::connect_options_builder() //mqtt 연결 옵션 설정
+		.clean_session() //클린 세션 설정 (연결이 끊어진 경우 해당 클라이언트와 관련된 모든 세션 정보를 삭제)
+		.will(mqtt::message(TOPIC, LWT_PAYLOAD, TEST_QOS)) //연결이 예기치않게 끊어질 경우 브로커에게 전달할 마지막 의사 표시 메시지를 설정. 
+		.finalize(); //설정된 연결 옵션들을 최종적으로 완료. 
 
 	cout << "  ...OK" << endl;
 
 	try {
 		cout << "\nConnecting..." << endl;
-		mqtt::token_ptr conntok = client.connect(connOpts);
+		mqtt::token_ptr conntok = client.connect(connOpts); //mqtt 클라이언트가 브로커에 연결을 시도. mqtt::token_ptr 은 mqtt 작업을 나타내느 포인터 타입. 
+        //client 객체의 connect 함수를 호출하고 연결 옵션 connOpts를 전달하여 mqtt 브로커에 연결을 시도함. 
 		cout << "Waiting for the connection..." << endl;
 		conntok->wait();
 		cout << "  ...OK" << endl;
 
-		// First use a message pointer.
+		// First use a message pointer. 첫번째 방법
 
 		cout << "\nSending message..." << endl;
 		mqtt::message_ptr pubmsg = mqtt::make_message(TOPIC, PAYLOAD1);
@@ -124,7 +126,7 @@ int main(int argc, char* argv[])
 		client.publish(pubmsg)->wait_for(TEST_TIMEOUT);
 		cout << "  ...OK" << endl;
 
-		// Now try with itemized publish.
+		// Now try with itemized publish. 두번째 방법
 
 		cout << "\nSending next message..." << endl;
 		mqtt::delivery_token_ptr pubtok;
@@ -135,7 +137,7 @@ int main(int argc, char* argv[])
 		pubtok->wait_for(TEST_TIMEOUT);
 		cout << "  ...OK" << endl;
 
-		// Now try with a listener
+		// Now try with a listener 세번째 방법
 
 		cout << "\nSending next message..." << endl;
 		test_action_listener listener;
@@ -144,7 +146,7 @@ int main(int argc, char* argv[])
 		pubtok->wait();
 		cout << "  ...OK" << endl;
 
-		// Finally try with a listener, but no token
+		// Finally try with a listener, but no token 네번째 방법
 
 		cout << "\nSending final message..." << endl;
 		delivery_action_listener deliveryListener;
