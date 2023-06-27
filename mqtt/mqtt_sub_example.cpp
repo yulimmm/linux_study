@@ -6,13 +6,14 @@
 #include <thread>
 #include <chrono>
 #include "mqtt/async_client.h"
+//#include "mqtt_ctl/mqtt_ctl.h"
 
 const std::string SERVER_ADDRESS("tcp://localhost:1883");
 const std::string CLIENT_ID("paho_cpp_async_subcribe");
 const std::string TOPIC("hello");
 
 const int	QOS = 1;
-const int	N_RETRY_ATTEMPTS = 5;
+const int	N_RETRY_ATTEMPTS = 5; //연결 재시도 횟수
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -143,7 +144,7 @@ int main(int argc, char* argv[])
 	mqtt::async_client cli(SERVER_ADDRESS, CLIENT_ID);
 
 	mqtt::connect_options connOpts;
-	connOpts.set_clean_session(false);
+	connOpts.set_clean_session(false); //clean 세션을 false로 설정하면 클라이언트와 브로커 간 연결이 끊어져도 클라이언트의 상태 정보가 보존됨. 
 
 	// Install the callback(s) before connecting.
 	callback cb(cli, connOpts);
@@ -164,8 +165,7 @@ int main(int argc, char* argv[])
 
 	// Just block till user tells us to quit.
 
-	while (std::tolower(std::cin.get()) != 'q')
-		;
+	while (std::tolower(std::cin.get()) != 'q');
 
 	// Disconnect
 
