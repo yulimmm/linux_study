@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
     mqd_t mq;
     char buf[128] = {0};
 
-    mq = mq_open("/reakwon_mq", O_WRONLY, 0666, &attr);
+    mq = mq_open("/test_mq", O_WRONLY, 0666, &attr);
     if (mq == (mqd_t)-1) {
         perror("open error");
         exit(0);
