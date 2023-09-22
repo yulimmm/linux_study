@@ -14,7 +14,7 @@ int main() {
 
     mqd_t mq;
 
-    mq = mq_open("/reakwon_mq", O_RDWR | O_CREAT, 0666, &attr);
+    mq = mq_open("/test_mq", O_RDWR | O_CREAT, 0666, &attr);
     if (mq == (mqd_t)-1) {
         perror("message queue open error");
         exit(1);
