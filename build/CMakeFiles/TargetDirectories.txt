@@ -1,0 +1,9 @@
+/home/nano1/test/cmake_test/build/CMakeFiles/rebuild_cache.dir
+/home/nano1/test/cmake_test/build/CMakeFiles/edit_cache.dir
+/home/nano1/test/cmake_test/build/lib/CMakeFiles/rebuild_cache.dir
+/home/nano1/test/cmake_test/build/lib/CMakeFiles/edit_cache.dir
+/home/nano1/test/cmake_test/build/lib/CMakeFiles/print_lib.dir
+/home/nano1/test/cmake_test/build/lib/CMakeFiles/add_lib.dir
+/home/nano1/test/cmake_test/build/src/CMakeFiles/rebuild_cache.dir
+/home/nano1/test/cmake_test/build/src/CMakeFiles/MyApp.dir
+/home/nano1/test/cmake_test/build/src/CMakeFiles/edit_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/MyApp.dir/main.cpp.o  -o ../bin/MyApp ../lib/libprint_lib.a ../lib/libadd_lib.a 

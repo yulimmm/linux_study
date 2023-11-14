@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/add/add.h
+
+../lib/print/print.h
+
+/home/nano1/test/cmake_test/src/main.cpp
+print.h
+/home/nano1/test/cmake_test/src/print.h
+add.h
+/home/nano1/test/cmake_test/src/add.h
+iostream
+-
+
